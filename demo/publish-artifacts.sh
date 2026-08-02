@@ -57,6 +57,22 @@ if grep -rl '"pid"' "$TARGET" >/dev/null 2>&1; then
   grep -rl '"pid"' "$TARGET" >&2
   exit 1
 fi
+# Name the repository this demo ships in and its head revision, so a reader
+# can resolve the published code even when service_revision_full names a
+# commit from a private lineage. Derived from the checkout at publish time;
+# absent when the demo does not live in one. The revision is the 12-char
+# short form: it resolves on GitHub, and the site's identifier guard only
+# allowlists one full-length hash (service_revision_full).
+published_repo="$(git -C "$DEMO" remote get-url origin 2>/dev/null \
+  | sed -E 's#^git@github\.com:#https://github.com/#; s#\.git$##' || true)"
+published_revision="$(git -C "$DEMO" rev-parse --short=12 HEAD 2>/dev/null || true)"
+if [ -n "$published_repo" ] && [ -n "$published_revision" ]; then
+  jq --arg repo "$published_repo" --arg rev "$published_revision" \
+    '. + {published_repo: $repo, published_revision: $rev}' \
+    "$TARGET/provenance.json" > "$TARGET/provenance.json.tmp" \
+    && mv "$TARGET/provenance.json.tmp" "$TARGET/provenance.json"
+fi
+
 # Hash every published file into the provenance record. A reader who downloads
 # the set can then confirm these are the same bytes this run wrote, and a later
 # accidental edit to one artifact stops being invisible.
