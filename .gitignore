@@ -1,0 +1,5 @@
+# Build output, run evidence, and the dev server database.
+demo/out/
+demo/bin/
+.service-checkout
+__pycache__/

@@ -1,0 +1,389 @@
+{
+  "events": [
+    {
+      "event_id": "1",
+      "event_time": "2026-07-30T21:52:18.282875065Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_EXECUTION_STARTED",
+      "task_id": "1048587",
+      "workflow_execution_started_event_attributes": {
+        "workflow_type": {
+          "name": "BeadOrchestrationWorkflow"
+        },
+        "task_queue": {
+          "name": "gascity-bead-orchestration",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJjb250cmFjdF92ZXJzaW9uIjoxLCJjaXR5X2lkIjoiY2l0eSIsInJ1bl9pZCI6ImludGVncmF0aW9uLXJ1biIsImluaXRpYWxfcmVhZHkiOlt7ImNvbnRyYWN0X3ZlcnNpb24iOjEsImV2ZW50X2lkIjoiZXZ0LWQzYmUzOGNjZTdmZDJmMmZkNTQzYWE0N2UyMjE5NzM4IiwiY2l0eV9pZCI6ImNpdHkiLCJydW5faWQiOiJpbnRlZ3JhdGlvbi1ydW4iLCJiZWFkX2lkIjoiZ2MtMSIsImdlbmVyYXRpb24iOjEsInJlYWR5X2F0IjoiMjAyNi0wNy0zMFQxMjowMDowMFoifV0sImNsb3NlX3doZW5faWRsZSI6ZmFsc2UsImhlYXJ0YmVhdF90aW1lb3V0Ijo2MDAwMDAwMDAwMCwiZXZlbnRfbGltaXQiOjEwMjR9"
+            }
+          ]
+        },
+        "workflow_execution_timeout": "0s",
+        "workflow_run_timeout": "0s",
+        "workflow_task_timeout": "10s",
+        "original_execution_run_id": "74b41723-0b67-4591-87d4-ac41152a8cef",
+        "identity": "1@worker-host@",
+        "first_execution_run_id": "74b41723-0b67-4591-87d4-ac41152a8cef",
+        "attempt": 1,
+        "first_workflow_task_backoff": "0s",
+        "header": {},
+        "workflow_id": "bead-orchestration/city/integration-run"
+      }
+    },
+    {
+      "event_id": "2",
+      "event_time": "2026-07-30T21:52:18.282923897Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_EXECUTION_SIGNALED",
+      "task_id": "1048588",
+      "workflow_execution_signaled_event_attributes": {
+        "signal_name": "bead.ready",
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJjb250cmFjdF92ZXJzaW9uIjoxLCJldmVudF9pZCI6ImV2dC1kM2JlMzhjY2U3ZmQyZjJmZDU0M2FhNDdlMjIxOTczOCIsImNpdHlfaWQiOiJjaXR5IiwicnVuX2lkIjoiaW50ZWdyYXRpb24tcnVuIiwiYmVhZF9pZCI6ImdjLTEiLCJnZW5lcmF0aW9uIjoxLCJyZWFkeV9hdCI6IjIwMjYtMDctMzBUMTI6MDA6MDBaIn0="
+            }
+          ]
+        },
+        "identity": "1@worker-host@",
+        "header": {}
+      }
+    },
+    {
+      "event_id": "3",
+      "event_time": "2026-07-30T21:52:18.282926202Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "task_id": "1048589",
+      "workflow_task_scheduled_event_attributes": {
+        "task_queue": {
+          "name": "gascity-bead-orchestration",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "start_to_close_timeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "event_id": "4",
+      "event_time": "2026-07-30T21:52:18.290004091Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "task_id": "1048593",
+      "workflow_task_started_event_attributes": {
+        "scheduled_event_id": "3",
+        "identity": "1@worker-host@",
+        "request_id": "4e5ceda0-0feb-45d9-99f8-225e55cb09b9",
+        "history_size_bytes": "956",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        }
+      }
+    },
+    {
+      "event_id": "5",
+      "event_time": "2026-07-30T21:52:18.294048201Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "task_id": "1048597",
+      "workflow_task_completed_event_attributes": {
+        "scheduled_event_id": "3",
+        "started_event_id": "4",
+        "identity": "1@worker-host@",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        },
+        "sdk_metadata": {
+          "lang_used_flags": [
+            3
+          ],
+          "sdk_name": "temporal-go",
+          "sdk_version": "1.46.0"
+        },
+        "metering_metadata": {}
+      }
+    },
+    {
+      "event_id": "6",
+      "event_time": "2026-07-30T21:52:18.294111631Z",
+      "event_type": "EVENT_TYPE_ACTIVITY_TASK_SCHEDULED",
+      "task_id": "1048598",
+      "activity_task_scheduled_event_attributes": {
+        "activity_id": "6",
+        "activity_type": {
+          "name": "ExecuteBeadActivity"
+        },
+        "task_queue": {
+          "name": "gascity-agent-work",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "header": {},
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJldmVudCI6eyJjb250cmFjdF92ZXJzaW9uIjoxLCJldmVudF9pZCI6ImV2dC1kM2JlMzhjY2U3ZmQyZjJmZDU0M2FhNDdlMjIxOTczOCIsImNpdHlfaWQiOiJjaXR5IiwicnVuX2lkIjoiaW50ZWdyYXRpb24tcnVuIiwiYmVhZF9pZCI6ImdjLTEiLCJnZW5lcmF0aW9uIjoxLCJyZWFkeV9hdCI6IjIwMjYtMDctMzBUMTI6MDA6MDBaIn19"
+            }
+          ]
+        },
+        "schedule_to_close_timeout": "0s",
+        "schedule_to_start_timeout": "0s",
+        "start_to_close_timeout": "86400s",
+        "heartbeat_timeout": "60s",
+        "workflow_task_completed_event_id": "5",
+        "retry_policy": {
+          "initial_interval": "1s",
+          "backoff_coefficient": 2,
+          "maximum_interval": "60s",
+          "maximum_attempts": 5
+        }
+      }
+    },
+    {
+      "event_id": "7",
+      "event_time": "2026-07-30T21:52:18.309016036Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_EXECUTION_SIGNALED",
+      "task_id": "1048604",
+      "workflow_execution_signaled_event_attributes": {
+        "signal_name": "bead.ready",
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJjb250cmFjdF92ZXJzaW9uIjoxLCJldmVudF9pZCI6ImV2dC1kM2JlMzhjY2U3ZmQyZjJmZDU0M2FhNDdlMjIxOTczOCIsImNpdHlfaWQiOiJjaXR5IiwicnVuX2lkIjoiaW50ZWdyYXRpb24tcnVuIiwiYmVhZF9pZCI6ImdjLTEiLCJnZW5lcmF0aW9uIjoxLCJyZWFkeV9hdCI6IjIwMjYtMDctMzBUMTI6MDA6MDBaIn0="
+            }
+          ]
+        },
+        "identity": "1@worker-host@",
+        "header": {}
+      }
+    },
+    {
+      "event_id": "8",
+      "event_time": "2026-07-30T21:52:18.309018250Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "task_id": "1048605",
+      "workflow_task_scheduled_event_attributes": {
+        "task_queue": {
+          "name": "worker-host:200edaa4-e15e-44ed-9e9e-41cc12bf9cfb",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normal_name": "gascity-bead-orchestration"
+        },
+        "start_to_close_timeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "event_id": "9",
+      "event_time": "2026-07-30T21:52:18.309655326Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "task_id": "1048609",
+      "workflow_task_started_event_attributes": {
+        "scheduled_event_id": "8",
+        "identity": "1@worker-host@",
+        "request_id": "fc4179bd-be7c-415c-98f8-cdf958167508",
+        "history_size_bytes": "1916",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        }
+      }
+    },
+    {
+      "event_id": "10",
+      "event_time": "2026-07-30T21:52:18.310943402Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "task_id": "1048613",
+      "workflow_task_completed_event_attributes": {
+        "scheduled_event_id": "8",
+        "started_event_id": "9",
+        "identity": "1@worker-host@",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        },
+        "sdk_metadata": {
+          "lang_used_flags": [
+            5,
+            8
+          ]
+        },
+        "metering_metadata": {}
+      }
+    },
+    {
+      "event_id": "11",
+      "event_time": "2026-07-30T21:52:18.311221669Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_EXECUTION_SIGNALED",
+      "task_id": "1048615",
+      "workflow_execution_signaled_event_attributes": {
+        "signal_name": "orchestration.close",
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJjb250cmFjdF92ZXJzaW9uIjoxLCJjaXR5X2lkIjoiY2l0eSIsInJ1bl9pZCI6ImludGVncmF0aW9uLXJ1biIsImV4cGVjdGVkX2V2ZW50X2lkcyI6WyJldnQtZDNiZTM4Y2NlN2ZkMmYyZmQ1NDNhYTQ3ZTIyMTk3MzgiXSwicmVhc29uX2NvZGUiOiJpbnRlZ3JhdGlvbi1jb21wbGV0ZSJ9"
+            }
+          ]
+        },
+        "identity": "1@worker-host@",
+        "header": {}
+      }
+    },
+    {
+      "event_id": "12",
+      "event_time": "2026-07-30T21:52:18.311223232Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "task_id": "1048616",
+      "workflow_task_scheduled_event_attributes": {
+        "task_queue": {
+          "name": "worker-host:200edaa4-e15e-44ed-9e9e-41cc12bf9cfb",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normal_name": "gascity-bead-orchestration"
+        },
+        "start_to_close_timeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "event_id": "13",
+      "event_time": "2026-07-30T21:52:18.311840108Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "task_id": "1048620",
+      "workflow_task_started_event_attributes": {
+        "scheduled_event_id": "12",
+        "identity": "1@worker-host@",
+        "request_id": "e544f956-78d5-43dc-ad70-18abc5b63c6a",
+        "history_size_bytes": "2506",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        }
+      }
+    },
+    {
+      "event_id": "14",
+      "event_time": "2026-07-30T21:52:18.313014390Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "task_id": "1048624",
+      "workflow_task_completed_event_attributes": {
+        "scheduled_event_id": "12",
+        "started_event_id": "13",
+        "identity": "1@worker-host@",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        },
+        "sdk_metadata": {},
+        "metering_metadata": {}
+      }
+    },
+    {
+      "event_id": "15",
+      "event_time": "2026-07-30T21:52:18.297429598Z",
+      "event_type": "EVENT_TYPE_ACTIVITY_TASK_STARTED",
+      "task_id": "1048626",
+      "activity_task_started_event_attributes": {
+        "scheduled_event_id": "6",
+        "identity": "1@worker-host@",
+        "request_id": "ead791c9-052c-4592-b2de-4e9676fb75d9",
+        "attempt": 1,
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        }
+      }
+    },
+    {
+      "event_id": "16",
+      "event_time": "2026-07-30T21:52:18.313291654Z",
+      "event_type": "EVENT_TYPE_ACTIVITY_TASK_COMPLETED",
+      "task_id": "1048627",
+      "activity_task_completed_event_attributes": {
+        "result": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJldmVudF9pZCI6ImV2dC1kM2JlMzhjY2U3ZmQyZjJmZDU0M2FhNDdlMjIxOTczOCIsIm91dGNvbWUiOiJjb21wbGV0ZWQiLCJzZXNzaW9uX2lkIjoiaW50ZWdyYXRpb24tc2Vzc2lvbiIsImFydGlmYWN0X3JlZnMiOlt7ImtpbmQiOiJjb21taXQiLCJ1cmkiOiJnaXQ6Y29tbWl0OjAxMjM0NTY3ODlhYmNkZWYiLCJzaGEyNTYiOiIwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmIn1dfQ=="
+            }
+          ]
+        },
+        "scheduled_event_id": "6",
+        "started_event_id": "15",
+        "identity": "1@worker-host@"
+      }
+    },
+    {
+      "event_id": "17",
+      "event_time": "2026-07-30T21:52:18.313299489Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "task_id": "1048628",
+      "workflow_task_scheduled_event_attributes": {
+        "task_queue": {
+          "name": "worker-host:200edaa4-e15e-44ed-9e9e-41cc12bf9cfb",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normal_name": "gascity-bead-orchestration"
+        },
+        "start_to_close_timeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "event_id": "18",
+      "event_time": "2026-07-30T21:52:18.313867353Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "task_id": "1048632",
+      "workflow_task_started_event_attributes": {
+        "scheduled_event_id": "17",
+        "identity": "1@worker-host@",
+        "request_id": "14b431c9-df50-4197-b921-7904f260c0ef",
+        "history_size_bytes": "3286",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        }
+      }
+    },
+    {
+      "event_id": "19",
+      "event_time": "2026-07-30T21:52:18.314842769Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "task_id": "1048636",
+      "workflow_task_completed_event_attributes": {
+        "scheduled_event_id": "17",
+        "started_event_id": "18",
+        "identity": "1@worker-host@",
+        "worker_version": {
+          "build_id": "eeed4cc5b7f91e32631a08b257ad5796"
+        },
+        "sdk_metadata": {},
+        "metering_metadata": {}
+      }
+    },
+    {
+      "event_id": "20",
+      "event_time": "2026-07-30T21:52:18.314864800Z",
+      "event_type": "EVENT_TYPE_WORKFLOW_EXECUTION_COMPLETED",
+      "task_id": "1048637",
+      "workflow_execution_completed_event_attributes": {
+        "result": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJjb250cmFjdF92ZXJzaW9uIjoxLCJjaXR5X2lkIjoiY2l0eSIsInJ1bl9pZCI6ImludGVncmF0aW9uLXJ1biIsInBoYXNlIjoiY29tcGxldGVkIiwicmVjZWl2ZWRfZXZlbnRfaWRzIjpbImV2dC1kM2JlMzhjY2U3ZmQyZjJmZDU0M2FhNDdlMjIxOTczOCJdLCJjb21wbGV0ZWRfZXZlbnRfaWRzIjpbImV2dC1kM2JlMzhjY2U3ZmQyZjJmZDU0M2FhNDdlMjIxOTczOCJdfQ=="
+            }
+          ]
+        },
+        "workflow_task_completed_event_id": "19"
+      }
+    }
+  ]
+}
