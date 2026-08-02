@@ -1,12 +1,14 @@
 # gas-city: the Temporal bead-orchestration boundary
 
-This repository publishes the code behind the Worker-kill recordings on
-[sjarmak.ai/temporal-agent-orchestration](https://www.sjarmak.ai/temporal-agent-orchestration/),
-and nothing else. It is a snapshot, not the working repository it came from.
+A coding agent is editing a worktree when the process that launched it dies.
+Can the retry find the agent that is still running, or does it start a second
+one against the same work?
 
-The question the recordings answer: when the process driving a coding agent
-dies, can the retry find the agent that is still running instead of starting a
-second one?
+This repository holds the code that answers that, and nothing else: a Temporal
+Workflow that owns the procedure, an Activity that owns the claim and the agent
+session, and a harness that kills the Worker on camera and checks what survived.
+It is a snapshot, curated from a working installation rather than exported from
+it.
 
 ## What is here
 
@@ -15,7 +17,7 @@ second one?
 | `services/temporal-maintenance/internal/temporalbeads` | The Workflow, the Activity, the Beads store adapter, the session resolver, and their tests |
 | `demo/harness` | A separate Go module that drives the real Workflow and Activity against a local Temporal server |
 | `demo/run.sh`, `demo/run-before.sh` | The two arms, end to end, with their verification gates |
-| `demo/recording` | The tmux split-screen scripts that produced the published casts |
+| `demo/recording` | The tmux split-screen scripts that record a run as an asciicast |
 
 `BeadOrchestrationWorkflow` owns the procedure. `ExecuteBeadActivity` writes the
 generation-fenced claim, starts the agent or attaches to the one already
@@ -61,11 +63,11 @@ any Gas City build.
 
 The service this was taken from carries more than the boundary published here:
 deployment units, operational runbooks, observation commands, and the rest of a
-running installation. None of that is needed to reproduce the recordings, so
-none of it is here.
+running installation. None of that is needed to run the demo, so none of it
+is here.
 
 Local absolute paths and worker identities have been replaced with neutral
 values in the test fixtures and scripts. The behaviour is unchanged and the
 suite passes, including both replay cases, but that makes this snapshot
 textually different from the internal revision `2b5df98802e00625a80163df8405d05a13188d62`
-that the recordings were built against.
+that this was taken from.
