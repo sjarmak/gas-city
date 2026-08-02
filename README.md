@@ -54,7 +54,8 @@ fails is a gate that is not wired up.
 ## License
 
 MIT. Upstream [gastownhall/gascity](https://github.com/gastownhall/gascity) is MIT
-as well, (c) 2025 Steve Yegge; this module is separate from any Gas City build.
+too; its LICENSE file reads (c) 2025 Steve Yegge. This module is separate from
+any Gas City build.
 
 ## What this snapshot is not
 
