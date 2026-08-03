@@ -53,6 +53,15 @@ code, and `TestReplayRejectsPlantedNondeterministicWorkflow` requires the replay
 gate to reject a deliberately nondeterministic Workflow. A gate that never
 fails is a gate that is not wired up.
 
+## The decision record behind the code
+
+| Doc | What it is |
+|---|---|
+| [when-durable-execution-earns-its-weight](docs/when-durable-execution-earns-its-weight.md) | The decision framework and verdicts from evaluating Temporal across a running multi-agent installation; most candidates lost |
+| [adr-temporal-beads-boundary](docs/adr-temporal-beads-boundary.md) | The ADR this code implements: Temporal owns the procedure, Beads owns the work facts |
+| [durable-execution-walkthrough](docs/durable-execution-walkthrough.md) | A production bash poller traced line by line against the primitives it reimplements |
+| [temporal-product-feedback](docs/temporal-product-feedback.md) | What the evaluation surfaced as product gaps, ranked |
+
 ## License
 
 MIT. Upstream [gastownhall/gascity](https://github.com/gastownhall/gascity) is MIT
