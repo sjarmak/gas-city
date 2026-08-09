@@ -1,16 +1,38 @@
-# gas-city: the Temporal bead-orchestration boundary
+# gas-city: systems patterns for agent software factories
+
+Gas City is a working study of how to turn nondeterministic coding agents into
+a deterministic software delivery system. This repository publishes the
+reusable architecture patterns and one executable Temporal case study curated
+from a running installation.
+
+The core system separates four authorities: a work ledger owns canonical facts,
+a durable engine owns procedure, workers own effects, and a control plane owns
+policy. The documents explain how that boundary extends into fencing,
+idempotency, observability, scheduling, overload, and cleanup.
+
+## Start with the software-factory model
+
+| Document | Question it answers |
+|---|---|
+| [Systems architecture](docs/software-factory-architecture.md) | Which layer owns facts, procedure, effects, and policy? |
+| [Distributed-systems review playbook](docs/distributed-systems-review-playbook.md) | How do you audit authority, retries, barriers, capacity, and failure recovery? |
+| [The instrument contract](docs/instrument-contract.md) | How do checks avoid turning observation failure into a reassuring green? |
+| [Idempotent convergence and fenced publication](docs/idempotent-convergence-and-fenced-publication.md) | How do interrupted multi-store operations converge without distributed transactions? |
+| [Scheduling, admission control, and backpressure](docs/scheduling-admission-and-backpressure.md) | How do queues, fairness, overload policy, and execution routing stay separate? |
+| [External effects and resource reclamation](docs/external-effects-and-resource-reclamation.md) | How do stale workers lose authority and abandoned resources get reclaimed safely? |
+
+These patterns do not require Temporal. The implementation below uses Temporal
+where the procedure itself must survive worker death.
+
+## Executable Temporal case study
 
 A coding agent is editing a worktree when the process that launched it dies.
 Can the retry find the agent that is still running, or does it start a second
 one against the same work?
 
-This repository holds the code that answers that, and nothing else: a Temporal
-Workflow that owns the procedure, an Activity that owns the claim and the agent
-session, and a harness that kills the Worker on camera and checks what survived.
-It is a snapshot, curated from a working installation rather than exported from
-it.
-
-## What is here
+The executable case study answers that question with a Temporal Workflow that
+owns the procedure, an Activity that owns the claim and agent session, and a
+test driver that kills the Worker and checks what survived.
 
 | Path | What it is |
 |---|---|
@@ -53,7 +75,7 @@ code, and `TestReplayRejectsPlantedNondeterministicWorkflow` requires the replay
 gate to reject a deliberately nondeterministic Workflow. A gate that never
 fails is a gate that is not wired up.
 
-## The decision record behind the code
+## Temporal decision records
 
 | Doc | What it is |
 |---|---|
@@ -68,12 +90,12 @@ MIT. Upstream [gastownhall/gascity](https://github.com/gastownhall/gascity) is M
 too; its LICENSE file reads (c) 2025 Steve Yegge. This module is separate from
 any Gas City build.
 
-## What this snapshot is not
+## Publication boundary
 
-The service this was taken from carries more than the boundary published here:
-deployment units, operational runbooks, observation commands, and the rest of a
-running installation. None of that is needed to run the demo, so none of it
-is here.
+The working installation carries deployment units, live configuration,
+operational runbooks, internal trackers, and local evidence. Those are excluded.
+The public documents keep the reusable mechanisms, decision tests, and failure
+oracles.
 
 Local absolute paths and worker identities have been replaced with neutral
 values in the test fixtures and scripts. The behaviour is unchanged and the
